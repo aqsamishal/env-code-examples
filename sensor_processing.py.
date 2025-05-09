@@ -1,0 +1,24 @@
+def calculate_average(values):
+  return sum(values)/len(values)
+values=[72,55,101,90]
+average=calculate_average(values)
+print(f"average:{average:.2f}")
+
+stations=[
+    ['A1',62],
+    ['B5',97],
+    ['C3',155]
+]
+for station in stations:
+  print(f"{station[0]}->{station[1]}")
+
+def report_status(stations,threshold):
+  for info in stations:
+    id, pm25 = info
+    if pm25 < 250:
+      print(f"{id} -> {pm25} ug/m³ (safe)")
+    else:
+      print(f"{id} -> {pm25} ug/m³ (danger!)")
+
+stations = [['A1', 100], ['B5', 260], ['C3', 180]]
+report_status(stations, 100)
